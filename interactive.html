@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Interactive Study | Yuerong Zhang</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/interactive.css?v=editorial-1">
+  <script>if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embedded');</script>
+  <script defer src="assets/js/vendor/p5.min.js"></script>
+  <script defer src="assets/js/lucide.min.js"></script>
+  <script defer src="assets/js/sketch-assets.js?v=browser-studies-1"></script>
+  <script defer src="assets/js/interactive.js?v=hand-scenes-2"></script>
+</head>
+<body>
+  <header class="standalone-header"><a id="back-link" href="work.html" aria-label="Back to project"><i data-lucide="arrow-left" aria-hidden="true"></i></a><h1 id="sketch-title">Interactive Study</h1></header>
+  <main id="study">
+    <div class="study-toolbar" role="group" aria-label="Artwork controls">
+      <div class="study-controls">
+        <button id="camera" class="camera-button" type="button" title="Enable camera" hidden><i data-lucide="camera" aria-hidden="true"></i><span>Camera</span></button>
+        <button id="sample" type="button" aria-label="Next sample image" title="Next sample image" hidden><i data-lucide="images" aria-hidden="true"></i></button>
+        <button id="pause" type="button" aria-label="Pause artwork" title="Pause artwork" aria-pressed="false"><i data-lucide="pause" aria-hidden="true"></i></button>
+        <button id="reset" type="button" aria-label="Reset artwork" title="Reset artwork"><i data-lucide="rotate-ccw" aria-hidden="true"></i></button>
+        <button id="save" type="button" aria-label="Save image" title="Save image"><i data-lucide="download" aria-hidden="true"></i></button>
+      </div>
+      <p id="study-status" role="status">Loading artwork</p>
+    </div>
+    <div id="canvas-host"></div>
+    <noscript><p>JavaScript is required for this artwork.</p></noscript>
+  </main>
+</body>
+</html>
