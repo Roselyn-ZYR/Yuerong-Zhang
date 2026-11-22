@@ -1,0 +1,61 @@
+.has-proximity-scenes .project-heading { width: calc(100% - var(--gutter) - var(--gutter)); max-width: 1120px; margin-inline: auto; padding: 124px 0 40px; }
+.has-proximity-scenes .project-heading h1 { font-size: 42px; line-height: 1.2; overflow-wrap: anywhere; }
+.has-proximity-scenes .project-title-zh { display: block; margin-top: 12px; font: 20px/1.6 Arial,Helvetica,sans-serif; color: var(--muted); }
+.has-proximity-scenes .project-overview.is-portrait { width: min(100%,1120px); margin-inline: auto; grid-template-columns: minmax(0,420px) minmax(0,1fr); gap: 56px; }
+.has-proximity-scenes .project-description { font-size: 25px; }
+.has-proximity-scenes .project-body { font-size: 14px; line-height: 1.8; }
+.has-proximity-scenes .facts > div:last-child { grid-column: 1 / -1; }
+.hand-scenes { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 56px 32px; max-width: 1120px; margin: 56px auto 0; }
+.hand-scene { min-width: 0; }
+.hand-scene.is-wide, .hand-scene.is-closing { grid-column: 1 / -1; }
+.hand-scene.is-wide { padding-bottom: 40px; border-bottom: 1px solid var(--line); }
+.hand-scene.is-closing { padding-top: 40px; border-top: 1px solid var(--line); }
+.proximity-scene { position: relative; display: block; isolation: isolate; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 0; border-radius: 0; padding: 0; background: #000; cursor: pointer; touch-action: pan-y; }
+.is-wide .proximity-scene, .is-closing .proximity-scene { aspect-ratio: 2 / 1; }
+.proximity-scene:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+.proximity-scene img { width: 100%; height: 100%; object-fit: contain; transform: none; transition: none; }
+.hand-scene:not(.is-wide):not(.is-closing) .proximity-scene img { object-fit: cover; }
+.scene-ambient { position: absolute; inset: 0; }
+.scene-lit { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .65s ease; }
+.proximity-scene.is-near .scene-lit { opacity: 1; }
+.scene-lit img { animation: hand-light-breath 4.8s ease-in-out infinite; animation-play-state: paused; }
+.proximity-scene.is-near .scene-lit img { animation-play-state: running; }
+@keyframes hand-light-breath { 0%,100% { opacity: 1; } 50% { opacity: .7; } }
+.scene-image-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; min-height: 32px; }
+.scene-state { font-size: 10px; }
+.scene-image-tools { display: flex; gap: 4px; }
+.scene-image-tools button { display: grid; place-items: center; width: 32px; height: 32px; border: 0; background: transparent; padding: 6px; border-radius: 3px; }
+.scene-image-tools button:hover { background: var(--blue-deep); }
+.scene-image-tools svg { width: 16px; height: 16px; }
+.scene-copy { padding-top: 16px; }
+.scene-copy .scene-index { margin: 0 0 10px; font-size: 10px; color: var(--muted); }
+.scene-copy h2 { font-size: 26px; line-height: 1.2; }
+.scene-copy .scene-phrase-zh { margin: 12px 0 0; font-size: 15px; color: var(--ink); }
+.scene-copy .scene-phrase-en { margin: 3px 0 0; font-size: 13px; color: var(--muted); }
+.scene-copy .scene-meaning { margin: 18px 0 0; font-size: 14px; line-height: 1.8; max-width: 60ch; }
+.scene-copy .scene-meaning-zh { margin: 12px 0 0; font-size: 12px; line-height: 1.9; color: var(--muted); }
+.hand-scene.is-wide .scene-copy, .hand-scene.is-closing .scene-copy { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.55fr); gap: 40px; }
+.hand-scene.is-wide .scene-meaning, .hand-scene.is-closing .scene-meaning { margin-top: 0; max-width: none; }
+.hand-scenes.is-still .scene-lit { transition: none; }
+.hand-scenes.is-still .scene-lit img { animation: none; }
+@media (max-width: 900px) {
+  .has-proximity-scenes .project-overview.is-portrait { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .has-proximity-scenes .project-overview.is-portrait .project-cover { width: min(100%,420px); margin: 0; }
+}
+@media (max-width: 650px) {
+  .has-proximity-scenes .project-heading h1 { font-size: 34px; }
+  .has-proximity-scenes .project-heading { padding-top: 104px; }
+  .has-proximity-scenes .project-description { font-size: 23px; }
+  .hand-scenes { grid-template-columns: minmax(0,1fr); gap: 40px; margin-top: 56px; }
+  .is-wide .proximity-scene, .is-closing .proximity-scene { aspect-ratio: var(--scene-ratio); }
+  .hand-scene.is-wide { padding-bottom: 32px; }
+  .hand-scene.is-closing { padding-top: 32px; }
+  .scene-copy { padding-top: 12px; }
+  .hand-scene.is-wide .scene-copy, .hand-scene.is-closing .scene-copy { grid-template-columns: minmax(0,1fr); gap: 18px; }
+  .scene-copy h2 { font-size: 26px; }
+  .scene-copy .scene-meaning { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-lit { transition: none; }
+  .scene-lit img { animation: none; }
+}

@@ -1,0 +1,14 @@
+.teaching-poster-carousel { width: min(100%,380px); min-width: 0; justify-self: center; }
+.teaching-poster-track { display: flex; width: 100%; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.teaching-poster-track::-webkit-scrollbar { display: none; }
+.teaching-poster-slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; }
+.teaching-poster-link { display: block; aspect-ratio: 1191 / 1684; overflow: hidden; }
+.teaching-feature .teaching-poster-link img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; }
+.teaching-poster-slide figcaption { display: grid; align-content: start; gap: 4px; height: 56px; margin-top: 12px; font-size: 11px; line-height: 1.5; }
+.teaching-poster-slide figcaption span:first-child { color: var(--ink); }
+.teaching-carousel-controls { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 4px; }
+.teaching-carousel-controls > div { display: flex; gap: 8px; }
+.teaching-carousel-controls output { font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) {
+  .teaching-poster-carousel { width: min(100%,380px); justify-self: start; }
+}

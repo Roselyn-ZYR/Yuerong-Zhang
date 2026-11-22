@@ -1,0 +1,29 @@
+:root { --card-ground: #f7f7f7; --soft-line: #e4e4e4; --muted-quiet: #6b6b6b; --faint: #707070; --hover: #eee; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #171717;
+  --surface: #171717;
+  --text: #ededed;
+  --blue-deep: #2c2c2c;
+  --white: #171717;
+  --muted: #b2b2b2;
+  --line: #474747;
+  --accent: #ededed;
+  --accent-ink: #ededed;
+  --card-ground: #242424;
+  --soft-line: #383838;
+  --muted-quiet: #b2b2b2;
+  --faint: #999;
+  --hover: #2d2d2d;
+}
+.header-actions { display: flex; align-items: center; gap: 24px; min-width: 0; }
+.header-actions .theme-toggle { flex: none; width: 40px; height: 40px; border: 0; background: transparent; color: var(--ink); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.icon-button:hover:not(:disabled) { background: var(--hover); color: var(--ink); }
+.skip { background: var(--surface); }
+.project-image { background: var(--card-ground); }
+.image-note { background: var(--surface); color: var(--ink); }
+@media (max-width: 600px) {
+  .header-actions { width: 100%; gap: 12px; }
+  .header-actions .primary-nav { flex: 1; gap: 14px; min-width: 0; }
+}
